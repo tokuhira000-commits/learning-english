@@ -1,6 +1,7 @@
 const STORAGE_KEY = "consulting-english-progress-v1";
 const CUSTOM_KEY = "consulting-english-custom-v1";
 const UNLOCK_KEY = "consulting-english-unlocks-v1";
+const READING_KEY = "consulting-english-reading-v1";
 const DAILY_GOAL = 10;
 const DAILY_UNLOCK_COUNT = 10;
 
@@ -705,6 +706,183 @@ const phraseSets = {
   ],
 };
 
+const readingPassages = [
+  {
+    id: "retention-diagnostic",
+    title: "Retention Diagnostic for a Subscription Business",
+    category: "Strategy",
+    level: "Core",
+    minutes: 7,
+    context: "SaaSの解約率改善プロジェクト",
+    paragraphs: [
+      "The client, a regional subscription software provider, has seen customer churn increase for three consecutive quarters. At first, the leadership team assumed that the issue was pricing, because two competitors had recently launched discounted bundles. However, early interview findings suggest that price is only part of the story. New customers often struggle to see value during the first month, and the handoff between Sales and Customer Success is inconsistent across segments.",
+      "Our working hypothesis is that the root cause sits in the onboarding journey rather than in the price point itself. The team will pressure-test this hypothesis by comparing churn cohorts, reviewing usage data in the first thirty days, and interviewing customers who canceled before renewal. The analysis should separate symptoms from drivers, so that the recommendation does not overreact to competitor noise.",
+      "The immediate ask for the steering committee is alignment on the diagnostic scope. If the scope is approved, the next steps are to complete a deep dive on onboarding friction, quantify the potential retention uplift, and identify quick wins that can be piloted before the next renewal cycle.",
+    ],
+    keyTerms: ["churn", "working hypothesis", "root cause", "pressure-test", "drivers", "alignment", "scope", "uplift"],
+    vocabulary: [
+      {
+        term: "churn",
+        meaning: "解約、顧客離脱",
+        pronunciation: "チャーン",
+        core: "顧客が継続利用の流れから抜けていくイメージ。",
+      },
+      {
+        term: "cohort",
+        meaning: "同じ条件で分けた顧客群",
+        pronunciation: "コーホート",
+        core: "同じ時期や特徴を持つ集団を束ねて比較する箱。",
+      },
+      {
+        term: "overreact",
+        meaning: "過剰反応する",
+        pronunciation: "オーバーリアクト",
+        core: "一部のノイズに引っ張られて判断が大きく振れるイメージ。",
+      },
+    ],
+    questions: [
+      {
+        id: "retention-main-issue",
+        prompt: "The team's current hypothesis is that churn is mainly driven by which issue?",
+        choices: ["Competitor discounts", "Onboarding friction", "A lack of executive sponsorship", "Low market growth"],
+        answer: 1,
+        explanation: "The passage says the root cause likely sits in the onboarding journey, especially the first-month value experience and handoff.",
+      },
+      {
+        id: "retention-ask",
+        prompt: "What is the immediate ask for the steering committee?",
+        choices: ["Approve a full price reduction", "Align on the diagnostic scope", "Replace the Customer Success team", "Launch the final roadmap"],
+        answer: 1,
+        explanation: "The final paragraph states that the immediate ask is alignment on the diagnostic scope.",
+      },
+      {
+        id: "retention-method",
+        prompt: "Which analysis would best pressure-test the hypothesis?",
+        choices: ["Comparing churn cohorts and first-month usage data", "Only reviewing competitor websites", "Interviewing Finance once", "Skipping customer interviews"],
+        answer: 0,
+        explanation: "The text mentions churn cohorts, usage data, and customer interviews as the evidence base.",
+      },
+    ],
+    takeaway: "読解の軸は「表面的な価格問題」から「オンボーディング上の根本原因」へ論点が移っている点です。",
+  },
+  {
+    id: "operating-model-rollout",
+    title: "Operating Model Rollout Across Regions",
+    category: "Delivery",
+    level: "Advanced",
+    minutes: 8,
+    context: "グローバル組織変革の実行計画",
+    paragraphs: [
+      "A global manufacturer has designed a target operating model for its procurement function. The model centralizes category strategy while keeping supplier relationship management close to each region. On paper, the design improves scale, accountability, and risk management. In practice, regional leaders are concerned that the new governance will slow down local decisions and reduce flexibility with strategic suppliers.",
+      "The implementation team recommends a phased rollout instead of a big-bang launch. The first wave would cover indirect spend categories with relatively low supplier complexity. This allows the team to test decision rights, clarify escalation paths, and refine the dashboard before moving into more material direct-spend categories. A pilot will also create proof points that can be socialized with skeptical stakeholders.",
+      "The main dependency is data readiness. Without a consistent supplier taxonomy and clean spend data, the dashboard may create more debate than insight. The team should therefore sequence data cleanup before governance workshops, while keeping the executive sponsor engaged on any cross-regional pushback.",
+    ],
+    keyTerms: ["target operating model", "governance", "decision rights", "phased rollout", "pilot", "dependency", "dashboard", "pushback"],
+    vocabulary: [
+      {
+        term: "big-bang launch",
+        meaning: "一斉導入",
+        pronunciation: "ビッグバン・ローンチ",
+        core: "準備したものを一度に全体へ展開するイメージ。",
+      },
+      {
+        term: "taxonomy",
+        meaning: "分類体系",
+        pronunciation: "タクソノミー",
+        core: "データや対象を一貫したルールで棚分けする設計図。",
+      },
+      {
+        term: "proof point",
+        meaning: "有効性を示す実例・根拠",
+        pronunciation: "プルーフポイント",
+        core: "提案が机上の空論ではないと示す小さな証拠。",
+      },
+    ],
+    questions: [
+      {
+        id: "model-risk",
+        prompt: "What is the regional leaders' main concern?",
+        choices: ["The model has no supplier focus", "Local decisions may become slower", "The project has too much data quality", "Indirect spend is too complex"],
+        answer: 1,
+        explanation: "They worry that the new governance will slow local decisions and reduce flexibility.",
+      },
+      {
+        id: "model-why-pilot",
+        prompt: "Why does the team prefer a phased rollout?",
+        choices: ["To avoid using dashboards", "To test the model and build proof points", "To remove regional leaders from decisions", "To launch every category at once"],
+        answer: 1,
+        explanation: "The pilot tests decision rights and creates proof points for skeptical stakeholders.",
+      },
+      {
+        id: "model-dependency",
+        prompt: "What should be sequenced before governance workshops?",
+        choices: ["Data cleanup", "A pricing deep dive", "Customer onboarding", "A brand campaign"],
+        answer: 0,
+        explanation: "The passage says data cleanup should come before governance workshops due to data readiness dependency.",
+      },
+    ],
+    takeaway: "この文章では、設計そのものよりも「どう段階導入し、懸念を証拠で減らすか」が中心です。",
+  },
+  {
+    id: "margin-improvement",
+    title: "Margin Improvement Readout",
+    category: "Finance",
+    level: "Core",
+    minutes: 7,
+    context: "収益性改善の役員報告",
+    paragraphs: [
+      "The project team is preparing a margin improvement readout for the executive committee. The analysis shows that gross margin pressure is not evenly distributed across the portfolio. Two legacy product lines have stable revenue but increasingly unfavorable unit economics due to higher logistics costs, smaller order sizes, and manual exception handling.",
+      "The key takeaway is that the business should not pursue across-the-board price increases. A broad increase could create customer pushback in segments where margin is already healthy. Instead, the team recommends a more targeted approach: adjust pricing for low-margin configurations, redesign service levels for small orders, and automate exception-heavy workflows.",
+      "The business case is material but sensitive to adoption assumptions. If Sales can migrate half of small customers to the new service tiers within twelve months, operating margin could improve by 180 basis points. If adoption is slower, the benefit may be delayed by at least two quarters. The readout should therefore make the assumptions explicit and show a sensitivity analysis before asking for approval.",
+    ],
+    keyTerms: ["margin", "unit economics", "takeaway", "pushback", "business case", "material", "assumptions", "sensitivity analysis"],
+    vocabulary: [
+      {
+        term: "basis point",
+        meaning: "ベーシスポイント、0.01%",
+        pronunciation: "ベイシス・ポイント",
+        core: "利率や利益率の小さな変化を精密に測る単位。",
+      },
+      {
+        term: "across-the-board",
+        meaning: "一律の、全面的な",
+        pronunciation: "アクロス・ザ・ボード",
+        core: "対象全体に同じ処置を横一線でかけるイメージ。",
+      },
+      {
+        term: "service tier",
+        meaning: "サービス階層、提供レベル",
+        pronunciation: "サービス・ティア",
+        core: "顧客や注文条件に応じて提供内容を段階分けする棚。",
+      },
+    ],
+    questions: [
+      {
+        id: "margin-root",
+        prompt: "What is causing unfavorable unit economics in the legacy product lines?",
+        choices: ["Lower logistics costs", "Smaller order sizes and manual exception handling", "A new brand campaign", "Faster customer adoption"],
+        answer: 1,
+        explanation: "The first paragraph names higher logistics costs, smaller orders, and manual exception handling.",
+      },
+      {
+        id: "margin-recommendation",
+        prompt: "What does the team recommend instead of broad price increases?",
+        choices: ["A targeted margin improvement approach", "A full exit from all product lines", "A delay of all decisions", "A one-time discount program"],
+        answer: 0,
+        explanation: "The recommendation is targeted: pricing changes, service-level redesign, and automation.",
+      },
+      {
+        id: "margin-assumptions",
+        prompt: "Why should the readout include sensitivity analysis?",
+        choices: ["The case depends on adoption assumptions", "The committee dislikes charts", "The margin impact is already guaranteed", "The project has no financial model"],
+        answer: 0,
+        explanation: "The benefit changes depending on how quickly Sales migrates customers to new tiers.",
+      },
+    ],
+    takeaway: "一律値上げではなく、利益率が悪い構成に絞って打ち手を設計する、という読み取りがポイントです。",
+  },
+];
+
 const categoryColors = {
   Strategy: "#6d5bd0",
   Client: "#0f766e",
@@ -837,9 +1015,11 @@ const coreImages = {
 let progress = loadJson(STORAGE_KEY, {});
 let customTerms = loadJson(CUSTOM_KEY, []);
 let unlockState = loadJson(UNLOCK_KEY, null);
+let readingProgress = loadJson(READING_KEY, {});
 let activeView = "dashboard";
 let activeCategory = "all";
 let activePhraseSet = Object.keys(phraseSets)[0];
+let activeReadingId = readingPassages[0].id;
 let searchTerm = "";
 let currentCardId = null;
 let cardFlipped = false;
@@ -865,6 +1045,7 @@ function saveState() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
   localStorage.setItem(CUSTOM_KEY, JSON.stringify(customTerms));
   localStorage.setItem(UNLOCK_KEY, JSON.stringify(unlockState));
+  localStorage.setItem(READING_KEY, JSON.stringify(readingProgress));
 }
 
 function allTerms() {
@@ -977,6 +1158,74 @@ function stats() {
     due: dueTerms().length,
     accuracy: attempts ? Math.round((correct / attempts) * 100) : 0,
   };
+}
+
+function ensureReadingProgress(id) {
+  if (!readingProgress[id]) {
+    readingProgress[id] = {
+      answers: {},
+      completed: false,
+    };
+  }
+  return readingProgress[id];
+}
+
+function filteredReadings() {
+  const needle = searchTerm.trim().toLowerCase();
+  return readingPassages.filter((item) => {
+    const categoryOk = activeCategory === "all" || item.category === activeCategory;
+    const text = [
+      item.title,
+      item.context,
+      item.level,
+      item.category,
+      ...item.paragraphs,
+      ...item.keyTerms,
+      ...item.vocabulary.map((word) => `${word.term} ${word.meaning} ${word.pronunciation} ${word.core}`),
+      ...item.questions.map((question) => `${question.prompt} ${question.choices.join(" ")} ${question.explanation}`),
+    ]
+      .join(" ")
+      .toLowerCase();
+    return categoryOk && (!needle || text.includes(needle));
+  });
+}
+
+function currentReading() {
+  const readings = filteredReadings();
+  if (!readings.length) return null;
+  if (!readings.some((item) => item.id === activeReadingId)) {
+    activeReadingId = readings[0].id;
+  }
+  return readings.find((item) => item.id === activeReadingId) || readings[0];
+}
+
+function readingScore(reading) {
+  const record = ensureReadingProgress(reading.id);
+  const answers = record.answers || {};
+  const answered = reading.questions.filter((question) => answers[question.id] !== undefined).length;
+  const correct = reading.questions.filter((question) => answers[question.id] === question.answer).length;
+  return {
+    answered,
+    correct,
+    total: reading.questions.length,
+  };
+}
+
+function answerReadingQuestion(readingId, questionId, choiceIndex) {
+  const reading = readingPassages.find((item) => item.id === readingId);
+  if (!reading) return;
+  const record = ensureReadingProgress(readingId);
+  record.answers[questionId] = choiceIndex;
+  const score = readingScore(reading);
+  record.completed = score.answered === score.total;
+  saveState();
+  render();
+}
+
+function resetReading(readingId) {
+  delete readingProgress[readingId];
+  saveState();
+  render();
 }
 
 function setView(view) {
@@ -1110,6 +1359,7 @@ function renderDashboard() {
             <p class="panel-kicker">Consulting moves</p>
             <h3>今日の重点</h3>
           </div>
+          <button class="small-button" data-action="open-reading" type="button">長文読解へ</button>
         </div>
         <ul class="insight-list">
           <li>会議では alignment、ask、next steps をセットで押さえると締まりが出ます。</li>
@@ -1300,6 +1550,146 @@ function renderQuiz() {
   if (board) board.innerHTML = quizMarkup();
 }
 
+function renderReadingView() {
+  const readings = filteredReadings();
+  const reading = currentReading();
+
+  if (!reading) {
+    return `
+      <section class="panel">
+        <div class="panel-heading">
+          <div>
+            <p class="panel-kicker">Reading</p>
+            <h3>条件に合う長文がありません</h3>
+          </div>
+        </div>
+        <p class="unlock-note">カテゴリや検索条件を変えると、読解ケースが表示されます。</p>
+      </section>
+    `;
+  }
+
+  const score = readingScore(reading);
+  const record = ensureReadingProgress(reading.id);
+  const passage = reading.paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("");
+  const keyTerms = reading.keyTerms.map((term) => `<span class="reading-term">${term}</span>`).join("");
+  const tabs = readings
+    .map((item) => {
+      const itemScore = readingScore(item);
+      const complete = itemScore.answered === itemScore.total;
+      return `
+        <button class="reading-tab ${item.id === reading.id ? "is-active" : ""}" data-action="reading-tab" data-id="${item.id}" type="button">
+          <span>${item.title}</span>
+          <small>${item.category} / ${item.minutes} min${complete ? " / done" : ""}</small>
+        </button>
+      `;
+    })
+    .join("");
+  const vocabulary = reading.vocabulary
+    .map((word) => {
+      return `
+        <article class="reading-word">
+          <h4>${word.term}</h4>
+          <p><strong>${word.meaning}</strong></p>
+          <p class="pronunciation">発音: ${word.pronunciation}</p>
+          <p>${word.core}</p>
+        </article>
+      `;
+    })
+    .join("");
+  const questions = reading.questions
+    .map((question, index) => {
+      const selected = record.answers?.[question.id];
+      const answered = selected !== undefined;
+      const choices = question.choices
+        .map((choice, choiceIndex) => {
+          const isCorrect = answered && choiceIndex === question.answer;
+          const isWrong = answered && choiceIndex === selected && choiceIndex !== question.answer;
+          return `
+            <button
+              class="choice-button reading-choice ${isCorrect ? "is-correct" : ""} ${isWrong ? "is-wrong" : ""}"
+              data-action="answer-reading"
+              data-reading="${reading.id}"
+              data-question="${question.id}"
+              data-choice="${choiceIndex}"
+              type="button"
+            >${choice}</button>
+          `;
+        })
+        .join("");
+      return `
+        <article class="reading-question">
+          <p class="panel-kicker">Question ${index + 1}</p>
+          <h4>${question.prompt}</h4>
+          <div class="choice-grid">${choices}</div>
+          ${
+            answered
+              ? `<div class="feedback"><strong>${selected === question.answer ? "正解" : "確認ポイント"}</strong><br>${question.explanation}</div>`
+              : ""
+          }
+        </article>
+      `;
+    })
+    .join("");
+
+  return `
+    <section class="reading-layout">
+      <aside class="reading-list panel">
+        <div class="panel-heading">
+          <div>
+            <p class="panel-kicker">Case library</p>
+            <h3>読解ケース</h3>
+          </div>
+        </div>
+        <div class="reading-tabs">${tabs}</div>
+      </aside>
+
+      <div class="reading-main">
+        <section class="panel reading-article">
+          <div class="reading-title-row">
+            <div>
+              <div class="term-meta">
+                ${categoryTag(reading)}
+                <span class="level">${reading.level}</span>
+                <span class="status-chip">${score.correct}/${score.total} correct</span>
+              </div>
+              <h3>${reading.title}</h3>
+              <p>${reading.context}</p>
+            </div>
+            <button class="ghost-button" data-action="reset-reading" data-id="${reading.id}" type="button">回答リセット</button>
+          </div>
+          <div class="reading-passage">${passage}</div>
+          <div class="core-image">
+            <strong>読み取りのポイント</strong>
+            <span>${reading.takeaway}</span>
+          </div>
+          <div class="reading-terms">${keyTerms}</div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-kicker">Vocabulary in context</p>
+              <h3>本文で出る重要語</h3>
+            </div>
+          </div>
+          <div class="reading-word-grid">${vocabulary}</div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-kicker">Comprehension check</p>
+              <h3>内容理解チェック</h3>
+            </div>
+            <span class="status-chip">${score.answered}/${score.total} answered</span>
+          </div>
+          <div class="reading-question-list">${questions}</div>
+        </section>
+      </div>
+    </section>
+  `;
+}
+
 function renderPhrasesView() {
   const tabs = Object.keys(phraseSets)
     .map((set) => {
@@ -1427,6 +1817,7 @@ function render() {
     dashboard: "本日の学習",
     flashcards: "単語カード",
     quiz: "クイズ",
+    reading: "長文読解",
     phrases: "実務フレーズ",
     library: "単語一覧",
   };
@@ -1435,6 +1826,7 @@ function render() {
     dashboard: renderDashboard,
     flashcards: renderFlashcardsView,
     quiz: renderQuizView,
+    reading: renderReadingView,
     phrases: renderPhrasesView,
     library: renderLibraryView,
   };
@@ -1505,6 +1897,9 @@ app.addEventListener("click", async (event) => {
   if (action === "open-flashcards") {
     setView("flashcards");
   }
+  if (action === "open-reading") {
+    setView("reading");
+  }
   if (action === "study-term") {
     currentCardId = button.dataset.id;
     setView("flashcards");
@@ -1529,6 +1924,16 @@ app.addEventListener("click", async (event) => {
   if (action === "phrase-tab") {
     activePhraseSet = button.dataset.set;
     render();
+  }
+  if (action === "reading-tab") {
+    activeReadingId = button.dataset.id;
+    render();
+  }
+  if (action === "answer-reading") {
+    answerReadingQuestion(button.dataset.reading, button.dataset.question, Number(button.dataset.choice));
+  }
+  if (action === "reset-reading") {
+    resetReading(button.dataset.id);
   }
   if (action === "copy-phrase") {
     const phrase = decodeURIComponent(button.dataset.phrase);
