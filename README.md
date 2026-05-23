@@ -1,2 +1,25 @@
-# learning-english
-An English learning app.
+# Consulting English Trainer
+
+グローバルコンサルティング業務で使う英単語を、単語カード、クイズ、実務フレーズで学習するための小さなWebアプリです。
+
+## Features
+
+- 毎日10語ずつ新語を自動解放
+- 単語カードとクイズで復習
+- カタカナ発音とコアイメージを表示
+- 実務フレーズ集
+- カテゴリ検索
+- 自分の案件で出た単語の追加
+- 学習進捗をブラウザ内に保存
+
+## Files
+
+- `index.html`: アプリの画面
+- `styles.css`: 見た目
+- `app.js`: 学習データと動作
+
+## How to Use
+
+`index.html` をブラウザで開くと動きます。
+
+GitHub Pagesで公開する場合は、このリポジトリの Pages 設定で `main` ブランチのルートを公開元にしてください。
