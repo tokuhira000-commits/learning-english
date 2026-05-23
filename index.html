@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consulting English Trainer</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="メニュー">
+        <div class="brand-block">
+          <div class="brand-mark" aria-hidden="true">CE</div>
+          <div>
+            <p class="eyebrow">Consulting English</p>
+            <h1>Work Vocabulary</h1>
+          </div>
+        </div>
+
+        <nav class="nav-stack" aria-label="学習メニュー">
+          <button class="nav-button is-active" data-view="dashboard" type="button">
+            <span class="nav-glyph" aria-hidden="true"></span>
+            <span>本日の学習</span>
+          </button>
+          <button class="nav-button" data-view="flashcards" type="button">
+            <span class="nav-glyph" aria-hidden="true"></span>
+            <span>単語カード</span>
+          </button>
+          <button class="nav-button" data-view="quiz" type="button">
+            <span class="nav-glyph" aria-hidden="true"></span>
+            <span>クイズ</span>
+          </button>
+          <button class="nav-button" data-view="phrases" type="button">
+            <span class="nav-glyph" aria-hidden="true"></span>
+            <span>実務フレーズ</span>
+          </button>
+          <button class="nav-button" data-view="library" type="button">
+            <span class="nav-glyph" aria-hidden="true"></span>
+            <span>単語一覧</span>
+          </button>
+        </nav>
+
+        <section class="mini-panel">
+          <p class="panel-kicker">Daily target</p>
+          <div class="goal-row">
+            <strong id="dailyProgressText">0 / 10</strong>
+            <span>reviews</span>
+          </div>
+          <div class="meter" aria-hidden="true">
+            <span id="dailyProgressBar"></span>
+          </div>
+        </section>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Global consulting vocabulary</p>
+            <h2 id="viewTitle">本日の学習</h2>
+          </div>
+          <div class="top-actions">
+            <label class="search-wrap">
+              <span>検索</span>
+              <input id="searchInput" type="search" placeholder="例: alignment, 仮説, KPI" />
+            </label>
+            <button class="ghost-button" id="resetProgress" type="button">進捗リセット</button>
+          </div>
+        </header>
+
+        <section class="filter-band" aria-label="フィルター">
+          <button class="filter-pill is-active" data-category="all" type="button">すべて</button>
+          <button class="filter-pill" data-category="Strategy" type="button">Strategy</button>
+          <button class="filter-pill" data-category="Client" type="button">Client</button>
+          <button class="filter-pill" data-category="Analytics" type="button">Analytics</button>
+          <button class="filter-pill" data-category="Finance" type="button">Finance</button>
+          <button class="filter-pill" data-category="Delivery" type="button">Delivery</button>
+          <button class="filter-pill" data-category="Leadership" type="button">Leadership</button>
+        </section>
+
+        <div id="app" class="view-region"></div>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
